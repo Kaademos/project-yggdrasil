@@ -1,5 +1,5 @@
 # CODEOWNERS
-/core/gatekeeper/ @platform-lead @appsec
-/core/flag-oracle/ @platform-lead @appsec
-/realms/** @realm-maintainers
-/config/** @devops @appsec
+/core/gatekeeper/ @kaademos @kirumachi
+/core/flag-oracle/ @kaademos @kirumachi
+/realms/** @kaademos @kirumachi
+/config/** @@kaademos @kirumachi
