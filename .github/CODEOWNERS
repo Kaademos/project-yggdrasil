@@ -1,0 +1,5 @@
+# CODEOWNERS
+/core/gatekeeper/ @platform-lead @appsec
+/core/flag-oracle/ @platform-lead @appsec
+/realms/** @realm-maintainers
+/config/** @devops @appsec

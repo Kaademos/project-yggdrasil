@@ -1,0 +1,129 @@
+# ======================
+# Kademos Yggdrasil Monorepo .gitignore
+# Covers Node.js, Python, Docker, CI/CD, and tooling.
+# ======================
+
+# --- General ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+logs/
+*.tmp
+*.bak
+*.swp
+*.swo
+.env
+.env.*
+*.pid
+
+# --- OS cache ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.mypy_cache/
+*.pytest_cache/
+*.coverage
+.coverage.*
+.cache/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+htmlcov/
+
+# --- Python virtual environments ---
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+
+# --- Node.js ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+*.tsbuildinfo
+
+# --- Build artifacts ---
+dist/
+build/
+target/
+out/
+lib/
+bin/
+*.egg-info/
+.eggs/
+
+# --- Docker ---
+*.tar
+*.tar.gz
+docker-compose.override.yml
+core/**/tmp/
+core/**/cache/
+**/.docker/
+
+# --- CI/CD ---
+*.coverage
+reports/
+artifacts/
+test-results/
+junit.xml
+**/coverage/
+**/reports/
+**/logs/
+
+# --- Security keys / test fixtures ---
+*.pem
+*.crt
+*.key
+*.pub
+**/fixtures/*
+!**/test/fixtures/example_*.*
+!**/fixtures/README.md
+
+# --- Redis / DB volumes ---
+data/
+volumes/
+*.rdb
+*.sqlite
+*.db
+
+# --- Monorepo build folders ---
+core/gatekeeper/node_modules/
+core/gatekeeper/dist/
+core/flag-oracle/.venv/
+core/flag-oracle/__pycache__/
+core/flag-oracle/htmlcov/
+core/flag-oracle/.pytest_cache/
+realms/**/node_modules/
+realms/**/__pycache__/
+realms/**/dist/
+realms/**/build/
+realms/**/.venv/
+
+# --- Local configs / secrets ---
+**/.env.local
+**/.env.development
+**/.env.staging
+**/.env.production
+secret.*
+secrets.json
+config.local.*
+
+# --- Generated docs / exports ---
+*.pdf
+*.png
+*.svg
+*.csv
+*.tar.gz
+*.zip
+.docs/output/
+.docs/tmp/
+docs_build/
+site/
+

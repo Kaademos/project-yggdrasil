@@ -1,0 +1,5 @@
+# RuleId	Threshold	Action
+10054	IGNORE	IGNORE   # Cookie without SameSite (control plane avoids sessions)
+10020	WARN	WARN      # X-Frame-Options - warn only
+10021	WARN	WARN      # X-Content-Type-Options - warn only
+10035	WARN	WARN      # Strict-Transport-Security - staging may be http
