@@ -1,26 +1,26 @@
 ```mermaid
 flowchart LR
   subgraph External
-    U[User / Tools]
+    U["User / Tools"]
   end
 
   subgraph ControlPlane
-    GK[Gatekeeper (Proxy)]
-    FO[Flag-Oracle (API)]
-    R[(Redis - progress_data)]
+    GK["Gatekeeper (Proxy)"]
+    FO["Flag-Oracle (API)"]
+    R["Redis (progress_data)"]
   end
 
   subgraph Realms
     subgraph niflheim_net
-      N1[Niflheim App]
-      N2[Hidden Service :1337]
+      N1["Niflheim App"]
+      N2["Hidden Service :1337"]
     end
     subgraph helheim_net
-      H1[Helheim App]
+      H1["Helheim App"]
     end
     subgraph asgard_net
-      A1[Asgard App]
-      A2[(PostgreSQL)]
+      A1["Asgard App"]
+      A2["PostgreSQL"]
     end
   end
 
@@ -36,4 +36,5 @@ flowchart LR
 
   classDef boundary fill:#fff,stroke:#000,stroke-width:2px,stroke-dasharray: 5 5;
   class ControlPlane,Realms boundary;
+
 ```
