@@ -1,0 +1,11 @@
+ID,STRIDE,Threat,Asset/Component,Risk,Mitigations,Owner
+T1,S,Service token forgery to Flag-Oracle,Flag-Oracle API,High,mTLS/JWT with strict aud/iss; IP allowlist; private network,Platform Lead
+T2,T,Redis state tampering,Redis progression,High,Redis ACL; AUTH; private net; disable dangerous cmds; backups,Infra/DevOps
+T3,R,Log manipulation / fake flags,Control-plane logs,Med,Central append-only logs; correlate with gatekeeper audit id,SRE
+T4,I,Leak of flags via control-plane error or logs,Flags/Secrets,High,No secrets in logs; error boundaries; secret scanning in CI,AppSec
+T5,D,DAST-induced DoS in staging,Staging env,Med,Rate limiting; resource quotas; scan windows; ephemeral env,SRE
+T6,E,Realm RCE lateral movement to other realms,Realm isolation,High,Per-realm bridge nets; gatekeeper single bridge; host firewall,Infra/DevOps
+T7,I,Open proxy misuse in Gatekeeper,Gatekeeper proxy,High,Target allowlist; deny private CIDRs; egress filters,Platform Lead
+T8,S,Admin UI brute force,Gatekeeper admin,Med,MFA; rate limits; lockouts; WAF,Platform Lead
+T9,T,CI secret exfiltration via logs,CI/CD,Med,Mask secrets; least-privilege tokens; OIDC federation,DevOps
+T10,I,Unauthorized access to admin endpoints in DAST_MODE,Admin APIs,High,Bind to private iface; authz; DAST_MODE guard,Platform Lead

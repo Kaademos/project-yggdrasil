@@ -1,0 +1,22 @@
+Chapter,Control_ID,Control_Summary,Level,Component,Verification(Method),Evidence
+V1,V1.1,"Document trust boundaries, DFD, STRIDE, and DAST_MODE semantics",L1/L2,"Gatekeeper, Flag-Oracle",Doc review; diagram present,"threat-model.md, dfd.png"
+V2,V2.1,Strong auth for admin endpoints; MFA-capable,L2,Gatekeeper,DAST negative tests; manual,auth-config.md
+V2,V2.2,Service-to-service auth (JWT or mTLS),L1/L2,"Gatekeeper, Flag-Oracle",Code review; unit test of token validation,svc-auth-test.log
+V3,V3.1,"Secure cookies (HttpOnly, Secure, SameSite)",L1,Gatekeeper,DAST cookie checks; code review,headers.txt
+V4,V4.1,Enforce progression (deny locked realms),L1/L2,Gatekeeper,Unit/e2e tests; DAST,progression-tests.json
+V4,V4.2,RBAC for admin routes,L2,Gatekeeper,Unit tests; manual,rbac-policy.yaml
+V5,V5.1,Validate proxy target allowlist; prevent open proxy,L2,Gatekeeper,Code review; e2e negative tests,proxy-allowlist.yml
+V6,V6.1,No hardcoded secrets; secure storage,L1,All,SAST; repo scan,gitleaks-report.json
+V7,V7.1,Structured logging; no secrets; centralization,L1/L2,"Gatekeeper, Flag-Oracle",Config review; DAST; log sample,log-policy.md
+V8,V8.1,Protect flags & progression state,L1/L2,"Flag-Oracle, Redis",Config review; attempt access,redis-acl.conf
+V9,V9.1,TLS 1.2+ externally; mTLS internally,L1/L2,All control-plane,DAST SSL/TLS checks; config review,tls-report.txt
+V10,V10.1,SBOM + container scanning; pinned base images,L1,All,CI artifacts; trivy scan,"sbom.spdx, trivy.json"
+V11,V11.1,Document business constraints for progression,L1,Gatekeeper,Doc review; unit tests,progression-spec.md
+V12,V12.1,Safely handle file & resource access (no traversal in control plane),L1,Gatekeeper,SAST/DAST tests,path-tests.json
+V13,V13.1,API security: authn/authz on Flag-Oracle endpoints,L1/L2,Flag-Oracle,Unit/e2e tests,api-tests.json
+V14,V14.1,Hardened defaults; secure headers; minimal surface,L1,Gatekeeper,DAST headers; config review,helmet-config.js
+V15,V15.1,Modern UI protections (CSRF where applicable),L1,Gatekeeper UI,DAST CSRF check; manual,csrf-config.js
+V16,V16.1,CI gates for SAST/SCA/DAST; evidence retention,L1/L2,CI/CD,CI logs; artifacts,pipeline.yml
+V5,V5.R-SSRF,Realm (Niflheim) intentionally lacks SSRF protections (for training) — mark as N/A-intentional,N/A,Realm-Niflheim,Doc-only,realm-notes.md
+V7,V7.R-LOG,Realm (Helheim) intentionally logs sensitive data — training control,N/A,Realm-Helheim,Doc-only,realm-notes.md
+V8,V8.R-ACCESS,Realm (Asgard) intentionally broken access control,N/A,Realm-Asgard,Doc-only,realm-notes.md

@@ -117,9 +117,7 @@ config.local.*
 
 # --- Generated docs / exports ---
 *.pdf
-*.png
 *.svg
-*.csv
 *.tar.gz
 *.zip
 .docs/output/
