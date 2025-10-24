@@ -1,3 +1,3 @@
 # Security Policy
 
-Report vulnerabilities privately to security@kademos.dev.
+Report vulnerabilities privately to kirumachi@proton.me.
